@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-yellow: #FBC615;
+  --color-brand-yellow-hover: #e5b20d;
+  --color-brand-sky: #21A6DC;
+  --color-brand-sky-light: #e6f6fc;
+  --color-brand-blue: #2077B1;
+  --color-brand-blue-dark: #175d8d;
+  --color-brand-dark: #3E3E3E;
+  --color-brand-charcoal: #2A2A2A;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-display: 'Outfit', 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+
+/* Custom scrollbars and refined input states */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  filter: opacity(0.65);
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator:hover {
+  filter: opacity(1);
+}
+
+/* Smooth transitions */
+* {
+  -webkit-font-smoothing: antialiased;
+}

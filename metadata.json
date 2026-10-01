@@ -1,0 +1,6 @@
+{
+  "name": "Up 2 Sky Travels",
+  "description": "Modern B2B travel booking portal and agency landing page with WhatsApp inquiry generator for flights, hotels, tours, Umrah, Hajj, and special airfares.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
