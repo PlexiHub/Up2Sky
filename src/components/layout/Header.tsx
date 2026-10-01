@@ -14,6 +14,7 @@ import {
   Mail,
 } from "lucide-react";
 import { Logo } from "../brand/Logo";
+import { WhatsAppIcon } from "../common/WhatsAppIcon";
 import { getWhatsAppNumber, createWhatsAppUrl } from "../../config/whatsapp";
 import { ServiceTabType } from "../search/TravelSearchWidget";
 
@@ -197,10 +198,12 @@ export const Header: React.FC<HeaderProps> = ({
               href={quickWhatsAppUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold text-white bg-[#25D366] hover:bg-[#20ba5a] shadow-xs shadow-emerald-600/20 transition-all hover:scale-102"
+              className="relative group inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold text-white bg-[#25D366] hover:bg-[#20ba5a] shadow-xs shadow-emerald-600/20 transition-all hover:scale-102 overflow-visible"
             >
-              <MessageSquare className="h-4 w-4 fill-white" />
-              <span>WhatsApp Us</span>
+              {/* Subtle wave pulse on hover/active */}
+              <span className="absolute inset-0 rounded-xl bg-[#25D366] animate-wa-wave opacity-50 pointer-events-none" />
+              <WhatsAppIcon size={16} animateWave={true} className="relative z-10 text-white" />
+              <span className="relative z-10">WhatsApp Us</span>
             </a>
 
             <button
@@ -218,10 +221,11 @@ export const Header: React.FC<HeaderProps> = ({
               href={quickWhatsAppUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 rounded-lg bg-[#25D366] text-white"
+              className="relative p-2 rounded-lg bg-[#25D366] text-white flex items-center justify-center overflow-visible"
               title="Chat on WhatsApp"
             >
-              <MessageSquare className="h-4 w-4 fill-white" />
+              <span className="absolute inset-0 rounded-lg bg-[#25D366] animate-wa-wave opacity-60 pointer-events-none" />
+              <WhatsAppIcon size={18} animateWave={true} className="relative z-10 text-white" />
             </a>
 
             <button
@@ -265,9 +269,9 @@ export const Header: React.FC<HeaderProps> = ({
                 href={quickWhatsAppUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-[#25D366] text-white text-xs font-bold shadow-xs"
+                className="w-full relative flex items-center justify-center gap-2 py-3 rounded-xl bg-[#25D366] text-white text-xs font-bold shadow-xs overflow-hidden"
               >
-                <MessageSquare className="h-4 w-4 fill-white" />
+                <WhatsAppIcon size={18} animateWave={true} className="text-white" />
                 <span>Chat on WhatsApp Directly</span>
               </a>
 

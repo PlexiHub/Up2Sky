@@ -1,15 +1,14 @@
-import React from "react";
 import {
   Phone,
   Mail,
   MapPin,
   Clock,
-  MessageSquare,
   ExternalLink,
   Shield,
   Plane,
 } from "lucide-react";
 import { Logo } from "../brand/Logo";
+import { WhatsAppIcon } from "../common/WhatsAppIcon";
 import { getWhatsAppNumber, createWhatsAppUrl } from "../../config/whatsapp";
 import { ServiceTabType } from "../search/TravelSearchWidget";
 
@@ -49,10 +48,11 @@ export const Footer: React.FC<FooterProps> = ({ onSelectService }) => {
                 href={waUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#25D366] hover:bg-[#20ba5a] text-white text-xs font-bold shadow-md shadow-emerald-950/20 transition-all hover:scale-102"
+                className="relative overflow-visible inline-flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-[#25D366] hover:bg-[#20ba5a] text-white text-xs font-bold shadow-md shadow-emerald-950/20 transition-all hover:scale-102"
               >
-                <MessageSquare className="h-4 w-4 fill-white" />
-                <span>Instant WhatsApp Desk</span>
+                <span className="absolute inset-0 rounded-xl bg-[#25D366] animate-wa-wave opacity-50 pointer-events-none" />
+                <WhatsAppIcon size={16} animateWave={true} className="relative z-10 text-white" />
+                <span className="relative z-10">Instant WhatsApp Desk</span>
               </a>
             </div>
           </div>
@@ -190,7 +190,7 @@ export const Footer: React.FC<FooterProps> = ({ onSelectService }) => {
             </div>
 
             <div className="flex items-center gap-2.5 text-xs text-slate-400">
-              <MessageSquare className="h-4 w-4 text-[#25D366] shrink-0" />
+              <WhatsAppIcon size={16} animateWave={true} className="text-[#25D366] shrink-0" />
               <a href={waUrl} target="_blank" rel="noopener noreferrer" className="hover:text-white">
                 WhatsApp Desk Active
               </a>

@@ -15,6 +15,7 @@ import {
   generateSpecialFareMessage,
   createWhatsAppUrl,
 } from "../../config/whatsapp";
+import { WhatsAppIcon } from "../common/WhatsAppIcon";
 
 interface SpecialFareFormProps {
   onInquiryReady: (message: string, title: string) => void;
@@ -197,15 +198,16 @@ export const SpecialFareForm: React.FC<SpecialFareFormProps> = ({
 
       {/* Submit Button */}
       <div className="pt-2 flex flex-col sm:flex-row items-center justify-between gap-3 border-t border-slate-100">
-        <div className="text-xs text-slate-500 flex items-center gap-2">
-          <Percent className="h-4 w-4 text-[#2077B1]" />
-          <span>Our ticketing desk scans non-GDS agent inventories for lowest pricing</span>
+        <div className="text-xs text-slate-600 flex items-center gap-2">
+          <WhatsAppIcon size={16} animateWave={true} className="text-[#25D366]" />
+          <span>Our ticketing desk scans non-GDS agent inventories directly on WhatsApp</span>
         </div>
 
         <button
           type="submit"
-          className="w-full sm:w-auto px-8 py-3.5 rounded-xl font-display font-bold text-sm bg-[#FBC615] hover:bg-[#e5b20d] text-slate-900 shadow-md shadow-amber-500/20 hover:shadow-lg transition-all flex items-center justify-center gap-2 cursor-pointer group"
+          className="relative overflow-visible w-full sm:w-auto px-8 py-3.5 rounded-xl font-display font-bold text-sm bg-[#FBC615] hover:bg-[#e5b20d] text-slate-900 shadow-md shadow-amber-500/20 hover:shadow-lg transition-all flex items-center justify-center gap-2.5 cursor-pointer group"
         >
+          <WhatsAppIcon size={18} animateWave={true} className="text-[#25D366]" />
           <span>Request Special Fare</span>
           <Send className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
         </button>

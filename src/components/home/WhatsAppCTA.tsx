@@ -1,5 +1,5 @@
-import React from "react";
-import { MessageSquare, ExternalLink, Phone, ShieldCheck, Clock } from "lucide-react";
+import { ExternalLink, Phone, ShieldCheck, Clock } from "lucide-react";
+import { WhatsAppIcon } from "../common/WhatsAppIcon";
 import { getWhatsAppNumber, createWhatsAppUrl } from "../../config/whatsapp";
 
 interface WhatsAppCTAProps {
@@ -39,11 +39,13 @@ export const WhatsAppCTA: React.FC<WhatsAppCTAProps> = ({ onDirectInquiry }) => 
             href={waUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-2xl bg-[#25D366] hover:bg-[#20ba5a] text-white font-extrabold text-base shadow-xl shadow-emerald-950/20 transition-all hover:scale-102"
+            className="relative group w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl bg-[#25D366] hover:bg-[#20ba5a] text-white font-extrabold text-base shadow-xl shadow-emerald-950/20 transition-all hover:scale-102 overflow-visible"
           >
-            <MessageSquare className="h-5 w-5 fill-white" />
-            <span>Chat on WhatsApp</span>
-            <ExternalLink className="h-4 w-4" />
+            {/* Wave ring aura around button */}
+            <span className="absolute inset-0 rounded-2xl bg-[#25D366] animate-wa-wave opacity-50 pointer-events-none" />
+            <WhatsAppIcon size={22} animateWave={true} className="relative z-10 text-white" />
+            <span className="relative z-10">Chat on WhatsApp</span>
+            <ExternalLink className="relative z-10 h-4 w-4" />
           </a>
 
           <button

@@ -10,6 +10,7 @@ import {
   ShieldCheck,
   Edit2,
 } from "lucide-react";
+import { WhatsAppIcon } from "./WhatsAppIcon";
 import {
   getWhatsAppNumber,
   setWhatsAppNumber,
@@ -175,11 +176,12 @@ export const WhatsAppPreviewModal: React.FC<WhatsAppPreviewModalProps> = ({
                 // Keep modal open or close shortly
                 setTimeout(onClose, 800);
               }}
-              className="flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold text-sm shadow-md shadow-emerald-500/20 transition-all hover:scale-[1.01]"
+              className="relative overflow-visible flex-1 flex items-center justify-center gap-2.5 py-3.5 px-4 rounded-xl bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold text-sm shadow-md shadow-emerald-500/20 transition-all hover:scale-[1.01]"
             >
-              <MessageSquare className="h-4 w-4 fill-white" />
-              <span>Send Message on WhatsApp</span>
-              <ExternalLink className="h-4 w-4" />
+              <span className="absolute inset-0 rounded-xl bg-[#25D366] animate-wa-wave opacity-50 pointer-events-none" />
+              <WhatsAppIcon size={20} animateWave={true} className="relative z-10 text-white" />
+              <span className="relative z-10">Send Message on WhatsApp</span>
+              <ExternalLink className="relative z-10 h-4 w-4" />
             </a>
 
             <button
